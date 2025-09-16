@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Error {{ error_code }} - Stream-Bit{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body text-center">
+                <i class="fas fa-exclamation-triangle fa-3x text-warning mb-3"></i>
+                <h1 class="display-4">{{ error_code }}</h1>
+                <p class="lead">{{ error_message }}</p>
+                <a href="{{ url_for('web.dashboard') }}" class="btn btn-primary">
+                    <i class="fas fa-home"></i> Back to Dashboard
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

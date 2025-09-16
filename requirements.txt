@@ -1,0 +1,122 @@
+# 🚀 Stream-Bit: Bitcoin Streaming Data Pipeline Dependencies
+# Versão 4.0.0 - Dashboard Flask Near-Real-Time Complete
+
+# ===============================
+# 🐍 Core Python Dependencies  
+# ===============================
+requests>=2.31.0
+pandas>=2.0.0
+python-dateutil>=2.8.0
+pydantic>=2.0.0
+jsonschema>=4.0.0
+
+# ===============================
+# 🌐 Flask Web Framework
+# ===============================
+flask>=2.3.0
+jinja2>=3.1.0
+werkzeug>=2.3.0
+itsdangerous>=2.1.0
+click>=8.1.0
+
+# ===============================
+# ⚡ Cache & Performance
+# ===============================
+cachetools>=5.3.0
+redis>=4.5.0
+
+# ===============================
+# ☁️ AWS Cloud Services
+# ===============================
+boto3>=1.26.0
+botocore>=1.29.0
+awscli>=1.27.0
+
+# ===============================
+# 🔄 Async & Concurrency
+# ===============================
+aiohttp>=3.8.0
+asyncio-throttle>=1.0.0
+
+# ===============================
+# 📊 Data Processing & Analytics
+# ===============================
+numpy>=1.24.0
+pyarrow>=12.0.0
+
+# ===============================
+# 📝 Logging & Monitoring
+# ===============================
+structlog>=23.0.0
+colorlog>=6.7.0
+
+# ===============================
+# 🔧 Development & Environment
+# ===============================
+python-dotenv>=1.0.0
+python-decouple>=3.8
+
+# ===============================
+# 🧪 Testing & Quality Assurance
+# ===============================
+pytest>=7.0.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.0.0
+pytest-flask>=1.2.0
+coverage>=7.0.0
+moto>=4.0.0
+
+# ===============================
+# 🛠️ Code Quality & Formatting
+# ===============================
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.0.0
+isort>=5.12.0
+
+# ===============================
+# 📚 Documentation
+# ===============================
+sphinx>=7.0.0
+furo>=2023.3.27
+
+# ===============================
+# 🔐 Security & Validation
+# ===============================
+cryptography>=41.0.0
+email-validator>=2.0.0
+
+# ===============================
+# 🌍 Platform Compatibility
+# ===============================
+# Instalação condicional baseada no OS
+pywin32>=306; sys_platform == "win32"
+uvloop>=0.17.0; sys_platform != "win32"
+
+# ===============================
+# 📈 Optional Production Dependencies
+# ===============================
+# Uncomment for production deployment
+# gunicorn>=21.2.0
+# gevent>=22.10.0
+# prometheus-client>=0.17.0
+# sentry-sdk[flask]>=1.28.0
+
+# ===============================
+# Development Notes
+# ===============================
+# Para instalar apenas dependencies core (sem dev/test):
+# pip install -r requirements.txt --no-deps
+#
+# Para instalar com desenvolvimento:
+# pip install -r requirements.txt
+#
+# Para produção (adicionar no final):
+# pip install gunicorn gevent prometheus-client sentry-sdk[flask]
+#
+# Compatibility:
+# - Python 3.8+ (testado até 3.11)
+# - Windows, macOS, Linux
+# - AWS CLI configurado (opcional)
+#
+# Total packages: ~35 core + ~15 dev/test = ~50 dependencies

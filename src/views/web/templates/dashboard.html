@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}Bitcoin Dashboard - Stream-Bit{% endblock %}
+
+{% block content %}
+<!-- Status Bar -->
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="alert alert-info d-flex align-items-center" role="alert">
+            <i class="fas fa-info-circle me-2"></i>
+            <div>
+                <strong>Stream-Bit Dashboard</strong> - Near real-time Bitcoin data with intelligent caching
+                <span id="connection-status" class="badge bg-secondary ms-2">Connecting...</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Current Price Card -->
+<div class="row mb-4">
+    <div class="col-md-6 col-lg-4">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0"><i class="fab fa-bitcoin text-warning"></i> Current Price</h5>
+                <span id="cache-indicator" class="badge bg-info d-none">Loading...</span>
+            </div>
+            <div class="card-body">
+                <h2 id="current-price" class="text-primary">$--,---</h2>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span id="price-change" class="text-muted">--</span>
+                    <span id="price-change-percent" class="badge bg-secondary">+0.00%</span>
+                </div>
+                <small id="last-update" class="text-muted">Last update: --</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 col-lg-8">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="fas fa-tachometer-alt"></i> System Status</h5>
+            </div>
+            <div class="card-body">
+                <div id="cache-stats">
+                    <p><strong>Cache Hit Rate:</strong> <span id="hit-rate">--%</span></p>
+                    <p><strong>Total Requests:</strong> <span id="total-requests">--</span></p>
+                    <p class="mb-0"><strong>Cache Size:</strong> <span id="cache-size">--</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Charts Row -->
+<div class="row mb-4">
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0"><i class="fas fa-chart-line"></i> Price Trend</h5>
+                <div class="btn-group btn-group-sm" role="group">
+                    <button type="button" class="btn btn-outline-primary chart-range-btn" data-hours="6">6h</button>
+                    <button type="button" class="btn btn-outline-primary chart-range-btn active"
+                        data-hours="24">24h</button>
+                    <button type="button" class="btn btn-outline-primary chart-range-btn" data-hours="72">3d</button>
+                </div>
+            </div>
+            <div class="card-body">
+                <canvas id="priceChart" width="400" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="fas fa-calculator"></i> Statistics</h5>
+            </div>
+            <div class="card-body">
+                <div id="statistics-content">
+                    <p><strong>Min Price (24h):</strong> <span id="min-price">$--,---</span></p>
+                    <p><strong>Max Price (24h):</strong> <span id="max-price">$--,---</span></p>
+                    <p><strong>Average Price:</strong> <span id="avg-price">$--,---</span></p>
+                    <p><strong>Volatility:</strong> <span id="volatility">--%</span></p>
+                    <p class="mb-0"><strong>Data Points:</strong> <span id="data-points">--</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('web.static', filename='js/dashboard.js') }}"></script>
+{% endblock %}

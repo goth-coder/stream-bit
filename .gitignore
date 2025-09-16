@@ -1,0 +1,21 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+*.egg-info
+
+# Build and distribution
+build/
+dist/
+wheels/
+
+# Environment files
+.venv
+.env
+
+# Project folders
+sql/
+mydocs/
+
+# IDE and config folders
+.vscode/
+.github/
