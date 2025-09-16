@@ -3,7 +3,6 @@
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Flask](https://img.shields.io/badge/flask-2.3+-green.svg)](https://flask.palletsprojects.com/)
 [![AWS](https://img.shields.io/badge/aws-kinesis%20|%20s3%20|%20athena-orange.svg)](https://aws.amazon.com/)
-[![Coverage](https://img.shields.io/badge/coverage-95%25+-brightgreen.svg)](https://coverage.readthedocs.io/)
 
 ## 🎯 **Overview**
 
@@ -15,7 +14,7 @@ Professional real-time data pipeline for **Bitcoin**, combining **Data Engineeri
 - ✅ **Real-time Dashboard** with Server-Sent Events + Chart.js
 - ✅ **Complete AWS Pipeline** (Firehose → S3 → Athena)
 - ✅ **Intelligent Caching** with TTL optimized by query type
-- ✅ **Scalable MVC Architecture** with >90% test coverage
+- ✅ **Scalable MVC Architecture** with clean separation of concerns
 - ✅ **Smart Synchronization** - updates only on real price changes
 
 ## 🏗️ **Technical Architecture**
@@ -113,25 +112,11 @@ python app.py --mode stream
 python app.py --mode test
 ```
 
-#### 🧪 **Tests and Coverage**
-```bash
-# Complete analysis with visual metrics
-python run_tests.py
-
-# Expected output:
-# 📊 COVERAGE ANALYSIS RESULTS
-# 📈 Line Coverage:   🟢 95.2%  
-# 🌿 Branch Coverage: 🟢 92.1%
-# 🎉 EXCELLENT! Coverage requirements met! 🎉
-```
-
 ## 🌟 **Features and Highlights**
 
 ### 🎯 **Real-time Dashboard**
 - **📊 Live Chart**: Chart.js with smart updates (only on price changes)
 - **⚡ Server-Sent Events**: Data streaming with automatic fallback to polling
-- **📱 Responsive Design**: Bootstrap 5 - works on desktop, tablet, and mobile
-- **🎨 Bitcoin Branding**: ₿ symbol and consistent visual theme
 - **📈 Dynamic Statistics**: Automatic sync between Current Price, Chart, and Statistics
 
 ### ⚙️ **Data Pipeline**
@@ -142,14 +127,11 @@ python run_tests.py
 - **📦 Format Conversion**: Automatic JSON → Parquet via Firehose
 
 ### 🧠 **Intelligent Architecture**
-- **⚡ TTL Cache**: Optimized by type (30s latest, 60s hourly, 120s stats)
+- **⚡ TTL Cache**: Optimized by type
 - **🔀 Synchronization**: Coordinated updates between all components
 - **📊 Performance**: Sliding window (150 points) for fluid charts
-- **🛠️ Unified Configuration**: Centralized config management
-- **🔧 Multi-mode**: Single entry point for web/stream/test
 
 ### 🔒 **Quality and Reliability**
-- **🧪 >90% Coverage**: Line + branch coverage with visual metrics
 - **⚠️ Error Handling**: Comprehensive error pages and API responses
 - **📝 Structured Logging**: Structured logging with appropriate levels
 - **📊 Monitoring**: Health checks and status page with system metrics
@@ -183,12 +165,9 @@ python run_tests.py
 | **Jinja2** | 3.1+ | Template engine |
 | **Vanilla JavaScript** | ES6+ | DOM manipulation |
 
-### **🧪 Testing & Quality**
+### **� Development & Quality**
 | Tool | Functionality |
 |------|---------------|
-| **pytest** | Test framework |
-| **coverage** | Code coverage analysis |
-| **moto** | AWS services mocking |
 | **structlog** | Structured logging |
 | **mypy** | Static type checking |
 
@@ -249,7 +228,6 @@ python app.py --mode test
 | **Stream Throughput** | 100+ req/min | CoinGecko rate limits |
 | **Chart Update** | <50ms | Only real changes (>R$ 0.01) |
 | **Memory Usage** | ~50MB | TTL cache + sliding window |
-| **Test Coverage** | 95%+ | Line + branch coverage |
 
 ### **🎯 Implemented Optimizations**
 - ✅ **Smart Caching**: TTL differentiated by query type
@@ -258,94 +236,15 @@ python app.py --mode test
 - ✅ **Async Operations**: ConcurrentFutures for I/O operations
 - ✅ **Query Optimization**: Partition projection in Athena
 
-## 🧪 **Testing and Quality**
-
-### **🎨 Visual Test Results**
-```bash
-python run_tests.py
-
-# Expected output:
-📊 COVERAGE ANALYSIS RESULTS
-📁 File: src/controllers/streaming_controller.py
-📈 Line Coverage:   🟢 96.8%
-🌿 Branch Coverage: 🟢 94.2%
-
-📁 File: src/services/web/cache_service.py  
-📈 Line Coverage:   🟢 97.5%
-🌿 Branch Coverage: 🟢 95.8%
-
-🎉 EXCELLENT! Coverage requirements met! 🎉
-```
-
-### **🔍 Test Types**
-- **Unit Tests**: Each module in isolation
-- **Integration Tests**: Complete pipeline
-- **Mock Tests**: AWS services (cost-free)
-- **Performance Tests**: Latency and throughput
-- **UI Tests**: Responsive frontend
-
 ## 📚 **Complete Documentation**
 
 | Document | Content |
 |----------|---------|
 | **[README.md](README.md)** | Setup, features, and usage |
-| **[ARCHITECTURE.md](ARCHITECTURE.md)** | Diagrams and technical design |
 | **[API_DOCUMENTATION.md](API_DOCUMENTATION.md)** | Endpoints and examples |
-| **[DEPLOYMENT.md](DEPLOYMENT.md)** | Deploy and production |
-| **[plan.md](plan.md)** | Roadmap and phases |
-| **[changelog.md](changelog.md)** | Version history |
-| **[FIREHOSE_SETUP.md](FIREHOSE_SETUP.md)** | AWS configuration |
-
-## 🏆 **Differentiators and Innovations**
-
-### **🎯 Technical**
-- ✅ **MVC-ETL Pattern**: Scalable and maintainable architecture
-- ✅ **Real-time Sync**: Smart synchronization between components
-- ✅ **Smart Caching**: TTL optimized by access pattern
-- ✅ **Unified Config**: Centralized and type-safe configuration
-- ✅ **Multi-mode Entry**: One app.py for all use cases
-
-### **🚀 Business**
-- ✅ **Near Real-time**: Updates <30s with intelligent caching
-- ✅ **Cost Optimized**: Significant reduction in Athena queries
-- ✅ **Scalable**: Architecture ready for multiple assets
-- ✅ **Production Ready**: Error handling, logging, monitoring
-- ✅ **Developer Friendly**: Setup in minutes, complete docs
-
-### **💡 Innovations**
-- ✅ **Price Change Detection**: Avoids visual chart pollution
-- ✅ **Synchronized Statistics**: Metrics always consistent
-- ✅ **Intelligent Labels**: Chart labels adapt to current range
-- ✅ **Fallback Strategies**: SSE → Polling → Graceful error
-- ✅ **Visual Feedback**: Real-time connection status
-
----
-
-## 📞 **Support and Contact**
-
-### **🛠️ Troubleshooting**
-```bash
-# Check structured logs
-tail -f stream-bit.log
-
-# Complete debug mode
-python app.py --mode web --debug --log-level DEBUG
-
-# Complete health check
-curl -v http://localhost:8080/api/health
-```
-
-### **📈 Next Steps**
-- [ ] **ML Models**: LSTM price prediction
-- [ ] **Multiple Assets**: Support for ETH, other cryptos
-- [ ] **Alerts**: Notifications on significant changes
-- [ ] **Historical Analysis**: Technical analysis tools
-- [ ] **Docker**: Complete containerization
 
 ---
 
 > **💡 Tip**: Use `python app.py --help` to see all available options
 
-> **🎥 Demo**: Recording of dashboard working in real-time available for demonstration
-
-**Developed with ❤️ to demonstrate competencies in Data Engineering, Cloud Computing, and Full-Stack Development**
+**Developed with ❤️ to demonstrate competencies in Data Engineering, Cloud Computing, and APIs**
